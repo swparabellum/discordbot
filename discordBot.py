@@ -8,6 +8,8 @@ import discord
 from datetime import datetime
 import time
 
+from discord.ext import commands
+
 #날씨를 불러오기 위한 모듈
 #https://smstudyroom.tistory.com/27
 import requests
@@ -28,7 +30,8 @@ CHANNEL_ID = '338962613775892491'
 
 class MyClient(discord.Client):
 
-    
+
+    client = commands.Bot(command_prefix='/')  
 
     async def on_ready(self):
         
@@ -78,6 +81,9 @@ class MyClient(discord.Client):
             
         return out
     
+    @client.command(name='날씨')
+    async def getWeather(ctx):
+         await ctx.send("날씨를알려드립니다.")
 
 
 
