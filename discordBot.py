@@ -46,7 +46,7 @@ class MyClient(discord.Client):
 
             getDate = dateTime.strftime("%Y%m%d")
             getTime = dateTime.strftime("%H00")
-            await message.channel.send('서울시 '+getTime+'시의 기온은... '+self.getTemp()+' 도 입니다. {0.author.mention}'.format(message))
+            await message.channel.send('오늘 서울시 06시의 기온은... '+self.getTemp()+' 도 입니다. {0.author.mention}'.format(message))
 
     def getTemp(self):
         # https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15084084
@@ -62,7 +62,7 @@ class MyClient(discord.Client):
         # &nx=60&ny=127 -> 서울시
         #부산시 - > 98, 76
         serviceKey= 'FRwmNG97jOhkLCeTd1P4fHx%2B5nf8Dx6SfFQV%2BBAMuc873IjQux3Fe6gC134S%2Fjdgs1XziXTjYfXe0qYeb9IvFQ%3D%3D'
-        api ="http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey="+serviceKey+"&numOfRows=1&pageNo=1&base_date="+getDate+"&base_time="+getTime+"&nx=60&ny=127&dataType=JSON"
+        api ="http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey="+serviceKey+"&numOfRows=1&pageNo=1&base_date="+getDate+"&base_time=0500&nx=60&ny=127&dataType=JSON"
 
         print(api)
 
