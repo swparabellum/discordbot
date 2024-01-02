@@ -61,21 +61,17 @@ class MyClient(discord.Client):
                 print(f"습도: {humidity}")
                 print(f"기압: {pressure}")
                 print(f"날씨: {report[0]['description']}")
+                
                 nowTime = datetime.today().strftime("%H시 %M분")
-                await message.channel.send("오늘 "+city_name+", "+nowTime+"의 온도는 "+str(temperature)+"이며 습도는"+str(humidity)+"% 이며 날씨는 "+report[0]['description']+ "입니다.")
+                city = {'Seoul':'서울','Busan':'부산'}
+
+                await message.channel.send("오늘 "+city[city_name]+"시, "+nowTime+"의 온도는 "+str(temperature)+"이며 습도는"+str(humidity)+"% 이며 날씨는 "+report[0]['description']+ "입니다.")
             else:
                 print("Error in the HTTP request")
                 await message.channel.send("ERROR: Error in the HTTP request")
             
 
-        
-
-
-
 intents = discord.Intents.default()
-
 intents.message_content = True
-
 client = MyClient(intents=intents)
-
 client.run(TOKEN)
