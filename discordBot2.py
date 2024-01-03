@@ -3,7 +3,7 @@
 2023년 12월 30일 강승우
 디스코드봇 소스코드.
 """
-
+from discord.ext import commands
 import discord
 from datetime import datetime
 import time
@@ -32,6 +32,7 @@ class MyClient(discord.Client):
         if message.content == '!날씨':
             #인자값도 받게 하려면?
             #https://softvanilla.github.io/discordbot/discord_%EB%AA%85%EB%A0%B9%EC%96%B4_%EB%A7%8C%EB%93%A4%EA%B8%B0/
+            #https://gihyeon.tistory.com/1
             dateTime = dt.datetime.now() - dt.timedelta(hours = 1)
 
             getDate = dateTime.strftime("%Y%m%d")
