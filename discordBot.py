@@ -21,7 +21,7 @@ import datetime as dt
 
 # https://yunwoong.tistory.com/214
 
-TOKEN = 'MTE4Njg0NzUzOTU2ODMxNjUwNg.GvfZ7M.O7Yk8SDAgdiY2JOaGgJcMUWzCmi44dfpCeaH-w'
+TOKEN = '토큰을여기에입력해넣을것'
 CHANNEL_ID = '338962613775892491'
 
 
